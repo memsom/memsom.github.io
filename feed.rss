@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+	<channel>
+		<title>Matt's dev musings</title>
+		<link>http://memsom.github.io/</link>
+		<description>A blog where I record my travels through code.</description>
+		<copyright>2021</copyright>
+		<pubDate>Thu, 28 Jan 2021 11:13:54 GMT</pubDate>
+		<lastBuildDate>Thu, 28 Jan 2021 11:13:54 GMT</lastBuildDate>
+		<item>
+			<title>First Post</title>
+			<link>http://memsom.github.io/posts/first-post</link>
+			<description>&lt;p&gt;This is a little blog I've decided to put together to document my travels through coding. I'm going to use it mainly to record a diary of my work, aid-memoire for stuff I've learned that I'll probably forget, and general help for others using my code or areas I'm an "expert" in.&lt;/p&gt;</description>
+			<guid>http://memsom.github.io/posts/first-post</guid>
+			<pubDate>Thu, 28 Jan 2021 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="a-blog"&gt;A blog?&lt;/h1&gt;
+&lt;p&gt;This is a little blog I've decided to put together to document my travels through coding. I'm going to use it mainly to record a diary of my work, aid-memoire for stuff I've learned that I'll probably forget, and general help for others using my code or areas I'm an &amp;quot;expert&amp;quot; in.&lt;/p&gt;
+&lt;p&gt;I don't know how often it will be updated, but I have attempted to make it as simple as possible for myself by using &lt;a href="https://github.com/Wyamio/Wyam"&gt;Wyam&lt;/a&gt; to statically generate the content.&lt;/p&gt;
+&lt;p&gt;So, what I am currently working on...&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/memsom/Mapsui-New"&gt;Mapsui.Forms&lt;/a&gt; - I have a custom version, which adds custom layers with customisable map objects, as well as a better abstraction of the map internal hierarchy.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/memsom/xamarin-bluetooth-le"&gt;xamarin-bluetooth-le&lt;/a&gt; - I have an Android only version that implements reliable writes.&lt;/li&gt;
+&lt;li&gt;PSP development - I am trying to learn more about this and see if I can make some small games as a fun side project from the day job.&lt;/li&gt;
+&lt;li&gt;Considering getting in to writing programming courses. Mainly around mobile development with Xamarin Forms.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There's more, but we will let that unfold over time.&lt;/p&gt;
+</content:encoded>
+		</item>
+	</channel>
+</rss>

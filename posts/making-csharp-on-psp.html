@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Matt&#x27;s dev musings - All Tags</title>
+        <title>Matt&#x27;s dev musings - Porting DNA to PSP (aka C Sharp on PSP)</title>
         <meta name="description" content="A blog where I record my travels through code." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Matt&#x27;s dev musings" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Matt&#x27;s dev musings - All Tags" />
+        <meta property="og:title" content="Matt&#x27;s dev musings - Porting DNA to PSP (aka C Sharp on PSP)" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://memsom.github.io/_Tags.cshtml" />
+        <meta property="og:url" content="http://memsom.github.io/posts/making-csharp-on-psp" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -72,9 +72,19 @@
                         <div class="container">
                                 <div class="row">
                                         <div class="col-md-12">
-<div class="site-heading">
-    <h1>All Tags</h1>
-</div>                                            </div>
+
+    
+<div class="post-heading">
+    <h1>Porting DNA to PSP (aka C Sharp on PSP)</h1>
+    <div class="meta">        
+Published on 28 January 2021<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/csharp" class="btn btn-default btn-xs">csharp</a>
+                    <a role="button" href="/tags/programming" class="btn btn-default btn-xs">programming</a>
+                    <a role="button" href="/tags/psp" class="btn btn-default btn-xs">psp</a>
+        </div>     
+</div>
+                                        </div>
                                 </div>
                         </div>
                 </header>
@@ -83,16 +93,48 @@
                 <div class="container">
                         <div class="row">
                                 <div id="content" class="col-md-12">
-                                        <div class="container-sm-height">
-    <div class="row row-sm-height">		
-        <div class="col-sm-12 col-sm-height">            
-                <a role="button" href="/tags/programming" class="btn btn-default btn-sm"> programming (1)</a>
-                <a role="button" href="/tags/csharp" class="btn btn-default btn-sm"> csharp (1)</a>
-                <a role="button" href="/tags/Introduction" class="btn btn-default btn-sm"> Introduction (1)</a>
-                <a role="button" href="/tags/psp" class="btn btn-default btn-sm"> psp (1)</a>
-        </div>
-    </div>
-</div>
+                                        
+
+<h1 id="making-the-psp-run.net-binaries">Making the PSP run .Net binaries</h1>
+<p>So, for a while I have wanted to get in to PSP programming. I've had a PSP since forever (2010?) and I always loved the form factor. I would dearly love a PSVita, but I can't really justify getting one without doing at least one PSP project.</p>
+<p>I decided to start looking at PSP development again. I've probably started 2 or 3 times over the last 10 or so years, but this time I finally went past a simple &quot;hello, world!&quot; or moving a simple block around the screen using the controls. Yes, I did those first too this time, but I also used that as an exercise to perfect my workflow. I now have a set-up on both PC (using a pre built SDK) and Mac (using an SDK I built myself from source) and have VSCode, USB HostFS, and PPSSPP running on both for quickly running code.</p>
+<p>The main issue with PSP homebrew these days is the lack of any really great documentation online. We have a lot of fragments, and the first week or so consisted of me searching out those fragments to see what I could find. I found enough to get going and so started on the next phase - porting DNA.</p>
+<h1 id="dot-net-anywhere">Dot Net Anywhere</h1>
+<p><a href="https://github.com/chrisdunelm/DotNetAnywhere">DNA</a> is a project by <a href="https://github.com/chrisdunelm">Chris Bacon</a>. It is somewhat abandoned, but still runs most modern DotNet Assemblies with some caveats. It was used to bootstrap Blazor, and is really pretty good at running basic code, albeit through an interpreter. My PSP port is based on my repo, where I pulled together a lot of the Blazor changes and a few other improvements made in other branches not merged in the main repo, but on the whole it is Chris's original code base.</p>
+<h2 id="bootstrapping">Bootstrapping</h2>
+<p>Making the code run on PSP was more about removing the parts that didn't fit with the way in which the PSP functions, rather than anything else. The PSP can't use dynamic libraries, so all the P/Invoke code needed to be removed. There isn't really a console, so I also removed all the console based code. After doing all this, the code almost compiled.</p>
+<h2 id="globs">GLOBS</h2>
+<p>The main part of the code that still failed to work was the code relating to the disk/filesystem access. The DNA code uses the Unix/Linux style GLOB API to access that type of data, and the PSP SDK seems to be missing that chunk of code, despite having the headers. I hunted around for a solution. I managed to find a project called <a href="https://www.bennugd.org/">Bennu Game Development</a> and a <a href="http://forum.bennugd.org/index.php?topic=715.85;wap2">post</a> regarding their PSP port. This used an implementation of GLOB called &quot;diet-glob&quot;, and this worked nicely as a drop in replacement for the PSP. After that the code compiled!</p>
+<h2 id="making-something-happen">Making something happen</h2>
+<p>So, having a runtime was not very useful on its own. So I created a new chunk of code specific to the PSP, in a namespace called &quot;PSP&quot;, and wired that in to the interpreter. I then wrote a simple app with the following code:</p>
+<pre><code class="language-csharp">using Psp;
+
+namespace testSimple
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var x = 10;
+            Debug.ScreenPrintf($&quot;x is {x}\n&quot;);
+
+            var y = 20;
+            Debug.ScreenPrintf($&quot;y is {y}\n&quot;);
+        }
+    }
+}
+</code></pre>
+<p>And ran it on the PPSSPP emulator. After a couple of tweaks, I was greeted with the following image:</p>
+<p><img src="images/ppsspp.jpg" class="img-fluid" alt="Image of PPSSPP running the code" title="PPSSPP runs code" /></p>
+<p>Wow! It worked... So next was to install on a real PSP:</p>
+<p><img src="images/psp-home.jpg" class="img-fluid" alt="Image of DNA on PSP home screen" title="DNA on PSP home screen" /></p>
+<p>And.... the same app on a PSP:</p>
+<p><img src="images/psp.jpg" class="img-fluid" alt="Image of DNA on PSP running the app" title="DNA on PSP running the app" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Well, it works. I am in the process of fleshing the code out more before releasing it. But I have now got a lot more working. Watch this space for more updates.</p>
+
+
+
                                 </div>
                         </div>
                 </div>

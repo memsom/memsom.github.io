@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is NOT compatible with Silverlight-->
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+  <Canvas Name="svg8" Width="63.809044" Height="61.541187">
+    <Canvas.RenderTransform>
+      <TranslateTransform X="0" Y="0"/>
+    </Canvas.RenderTransform>
+    <Canvas.Resources/>
+    <!--Unknown tag: sodipodi:namedview-->
+    <!--Unknown tag: metadata-->
+    <Canvas Name="layer1">
+      <Canvas.RenderTransform>
+        <TranslateTransform X="-23.657977" Y="-29.616311"/>
+      </Canvas.RenderTransform>
+      <Ellipse xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="24.2" Width="62.7" Canvas.Top="30.1" Height="60.5" Name="path815" Fill="#FF00FF00" StrokeThickness="1.06500006" Stroke="#FF000000" StrokeMiterLimit="4" StrokeLineJoin="Bevel" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+    </Canvas>
+    <Canvas Name="layer2">
+      <Canvas.RenderTransform>
+        <TranslateTransform X="-23.657977" Y="-29.616311"/>
+      </Canvas.RenderTransform>
+      <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path819" Fill="#FFF80000" StrokeThickness="1.06500006" Stroke="#FF000000" StrokeMiterLimit="4" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat">
+        <Path.Data>
+          <PathGeometry Figures="M 54.699142 33.286335 46.106258 48.693064 29.337637 49.085603 43.902103 63.631112 34.119389 82.463766 56.30276 74.712953 77.684273 81.661961 69.497116 64.392885 82.8495 49.00534 64.540804 48.35921 Z" FillRule="NonZero"/>
+        </Path.Data>
+      </Path>
+    </Canvas>
+  </Canvas>
+</Viewbox>

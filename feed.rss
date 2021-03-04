@@ -5,25 +5,235 @@
 		<link>http://memsom.github.io/</link>
 		<description>A blog where I record my travels through code.</description>
 		<copyright>2021</copyright>
-		<pubDate>Wed, 03 Mar 2021 11:25:15 GMT</pubDate>
-		<lastBuildDate>Wed, 03 Mar 2021 11:25:15 GMT</lastBuildDate>
+		<pubDate>Thu, 04 Mar 2021 10:33:45 GMT</pubDate>
+		<lastBuildDate>Thu, 04 Mar 2021 10:33:45 GMT</lastBuildDate>
 		<item>
-			<title>First Post</title>
-			<link>http://memsom.github.io/posts/first-post</link>
-			<description>&lt;p&gt;This is a little blog I've decided to put together to document my travels through coding. I'm going to use it mainly to record a diary of my work, aid-memoire for stuff I've learned that I'll probably forget, and general help for others using my code or areas I'm an "expert" in.&lt;/p&gt;</description>
-			<guid>http://memsom.github.io/posts/first-post</guid>
-			<pubDate>Thu, 28 Jan 2021 00:00:00 GMT</pubDate>
-			<content:encoded>&lt;h1 id="a-blog"&gt;A blog?&lt;/h1&gt;
-&lt;p&gt;This is a little blog I've decided to put together to document my travels through coding. I'm going to use it mainly to record a diary of my work, aid-memoire for stuff I've learned that I'll probably forget, and general help for others using my code or areas I'm an &amp;quot;expert&amp;quot; in.&lt;/p&gt;
-&lt;p&gt;I don't know how often it will be updated, but I have attempted to make it as simple as possible for myself by using &lt;a href="https://github.com/Wyamio/Wyam"&gt;Wyam&lt;/a&gt; to statically generate the content.&lt;/p&gt;
-&lt;p&gt;So, what I am currently working on...&lt;/p&gt;
+			<title>Converting an SVG in to a Xaml path</title>
+			<link>http://memsom.github.io/posts/converting-svg-to-xaml-path</link>
+			<description>&lt;p&gt;So - asked by a colleague how to do this, I made the following SVG:&lt;/p&gt;</description>
+			<guid>http://memsom.github.io/posts/converting-svg-to-xaml-path</guid>
+			<pubDate>Thu, 04 Mar 2021 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="how-do-you-convert-an-svg-to-a-xaml-path"&gt;How do you convert an SVG to a Xaml path?&lt;/h1&gt;
+&lt;p&gt;So - asked by a colleague how to do this, I made the following SVG:&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/star.svg" class="img-fluid" alt="Star SVG Image" /&gt;&lt;/p&gt;
+&lt;p&gt;This is a 2 layer SVG, with the circle being on one layer and the star on the second. I created the image in Inkscape - which is pretty easy to use and this took, maybe 5 minutes. Inkscape can export to Xaml Path. So I ended up with the following &lt;a href="images/star.xaml"&gt;Xaml&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-xml"&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!--This file is NOT compatible with Silverlight--&amp;gt;
+&amp;lt;Viewbox xmlns=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&amp;quot; Stretch=&amp;quot;Uniform&amp;quot;&amp;gt;
+  &amp;lt;Canvas Name=&amp;quot;svg8&amp;quot; Width=&amp;quot;63.809044&amp;quot; Height=&amp;quot;61.541187&amp;quot;&amp;gt;
+    &amp;lt;Canvas.RenderTransform&amp;gt;
+      &amp;lt;TranslateTransform X=&amp;quot;0&amp;quot; Y=&amp;quot;0&amp;quot;/&amp;gt;
+    &amp;lt;/Canvas.RenderTransform&amp;gt;
+    &amp;lt;Canvas.Resources/&amp;gt;
+    &amp;lt;!--Unknown tag: sodipodi:namedview--&amp;gt;
+    &amp;lt;!--Unknown tag: metadata--&amp;gt;
+    &amp;lt;Canvas Name=&amp;quot;layer1&amp;quot;&amp;gt;
+      &amp;lt;Canvas.RenderTransform&amp;gt;
+        &amp;lt;TranslateTransform X=&amp;quot;-23.657977&amp;quot; Y=&amp;quot;-29.616311&amp;quot;/&amp;gt;
+      &amp;lt;/Canvas.RenderTransform&amp;gt;
+      &amp;lt;Ellipse xmlns:x=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot; Canvas.Left=&amp;quot;24.2&amp;quot; Width=&amp;quot;62.7&amp;quot; Canvas.Top=&amp;quot;30.1&amp;quot; Height=&amp;quot;60.5&amp;quot; Name=&amp;quot;path815&amp;quot; Fill=&amp;quot;#FF00FF00&amp;quot; StrokeThickness=&amp;quot;1.06500006&amp;quot; Stroke=&amp;quot;#FF000000&amp;quot; StrokeMiterLimit=&amp;quot;4&amp;quot; StrokeLineJoin=&amp;quot;Bevel&amp;quot; StrokeStartLineCap=&amp;quot;Round&amp;quot; StrokeEndLineCap=&amp;quot;Round&amp;quot;/&amp;gt;
+    &amp;lt;/Canvas&amp;gt;
+    &amp;lt;Canvas Name=&amp;quot;layer2&amp;quot;&amp;gt;
+      &amp;lt;Canvas.RenderTransform&amp;gt;
+        &amp;lt;TranslateTransform X=&amp;quot;-23.657977&amp;quot; Y=&amp;quot;-29.616311&amp;quot;/&amp;gt;
+      &amp;lt;/Canvas.RenderTransform&amp;gt;
+      &amp;lt;Path xmlns:x=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot; Name=&amp;quot;path819&amp;quot; Fill=&amp;quot;#FFF80000&amp;quot; StrokeThickness=&amp;quot;1.06500006&amp;quot; Stroke=&amp;quot;#FF000000&amp;quot; StrokeMiterLimit=&amp;quot;4&amp;quot; StrokeLineJoin=&amp;quot;Miter&amp;quot; StrokeStartLineCap=&amp;quot;Flat&amp;quot; StrokeEndLineCap=&amp;quot;Flat&amp;quot;&amp;gt;
+        &amp;lt;Path.Data&amp;gt;
+          &amp;lt;PathGeometry Figures=&amp;quot;M 54.699142 33.286335 46.106258 48.693064 29.337637 49.085603 43.902103 63.631112 34.119389 82.463766 56.30276 74.712953 77.684273 81.661961 69.497116 64.392885 82.8495 49.00534 64.540804 48.35921 Z&amp;quot; FillRule=&amp;quot;NonZero&amp;quot;/&amp;gt;
+        &amp;lt;/Path.Data&amp;gt;
+      &amp;lt;/Path&amp;gt;
+    &amp;lt;/Canvas&amp;gt;
+  &amp;lt;/Canvas&amp;gt;
+&amp;lt;/Viewbox&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The question then is - how to use this?&lt;/p&gt;
+&lt;h2 id="just-the-canvas"&gt;Just the Canvas&lt;/h2&gt;
+&lt;p&gt;We can really just do away with everything except the &lt;code&gt;Canvas&lt;/code&gt; element and its content. This is the &amp;quot;meat&amp;quot; of the path.&lt;/p&gt;
+&lt;h2 id="scale"&gt;Scale&lt;/h2&gt;
+&lt;p&gt;The image I created is at a random size. So scaling the image is very crucial. I added a &lt;code&gt;ScaleTransform&lt;/code&gt; to the outer &lt;code&gt;Canvas&lt;/code&gt;, like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-xml"&gt;&amp;lt;Canvas.LayoutTransform&amp;gt;
+    &amp;lt;ScaleTransform ScaleX=&amp;quot;0.5&amp;quot; ScaleY=&amp;quot;0.5&amp;quot; /&amp;gt;
+&amp;lt;/Canvas.LayoutTransform&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="componentize"&gt;Componentize&lt;/h2&gt;
+&lt;p&gt;I created a simple User control and added the basic &lt;code&gt;Canvas&lt;/code&gt; and Transform to resize. I ended up with this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-xml"&gt;&amp;lt;UserControl x:Class=&amp;quot;testpathxaml.StarIcon&amp;quot;
+             xmlns=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&amp;quot;
+             xmlns:x=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot;
+             xmlns:mc=&amp;quot;http://schemas.openxmlformats.org/markup-compatibility/2006&amp;quot; 
+             xmlns:d=&amp;quot;http://schemas.microsoft.com/expression/blend/2008&amp;quot; 
+             xmlns:local=&amp;quot;clr-namespace:testpathxaml&amp;quot;
+             mc:Ignorable=&amp;quot;d&amp;quot;&amp;gt;
+    &amp;lt;Grid&amp;gt;
+        &amp;lt;Canvas Name=&amp;quot;svg8&amp;quot; Width=&amp;quot;63&amp;quot; Height=&amp;quot;61&amp;quot;&amp;gt;
+            &amp;lt;Canvas.RenderTransform&amp;gt;
+                &amp;lt;TranslateTransform X=&amp;quot;0&amp;quot; Y=&amp;quot;0&amp;quot;/&amp;gt;
+            &amp;lt;/Canvas.RenderTransform&amp;gt;
+            &amp;lt;Canvas.Resources/&amp;gt;
+            &amp;lt;!--Unknown tag: sodipodi:namedview--&amp;gt;
+            &amp;lt;!--Unknown tag: metadata--&amp;gt;
+            &amp;lt;Canvas Name=&amp;quot;layer1&amp;quot;&amp;gt;
+                &amp;lt;Canvas.RenderTransform&amp;gt;
+                    &amp;lt;TranslateTransform X=&amp;quot;-23.657977&amp;quot; Y=&amp;quot;-29.616311&amp;quot;/&amp;gt;
+                &amp;lt;/Canvas.RenderTransform&amp;gt;
+                &amp;lt;Ellipse xmlns:x=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot; Canvas.Left=&amp;quot;24.2&amp;quot; Width=&amp;quot;62.7&amp;quot; Canvas.Top=&amp;quot;30.1&amp;quot; Height=&amp;quot;60.5&amp;quot; Name=&amp;quot;path815&amp;quot; Fill=&amp;quot;#FF00FF00&amp;quot; StrokeThickness=&amp;quot;1.06500006&amp;quot; Stroke=&amp;quot;#FF000000&amp;quot; StrokeMiterLimit=&amp;quot;4&amp;quot; StrokeLineJoin=&amp;quot;Bevel&amp;quot; StrokeStartLineCap=&amp;quot;Round&amp;quot; StrokeEndLineCap=&amp;quot;Round&amp;quot;/&amp;gt;
+            &amp;lt;/Canvas&amp;gt;
+            &amp;lt;Canvas Name=&amp;quot;layer2&amp;quot;&amp;gt;
+                &amp;lt;Canvas.RenderTransform&amp;gt;
+                    &amp;lt;TranslateTransform X=&amp;quot;-23.657977&amp;quot; Y=&amp;quot;-29.616311&amp;quot;/&amp;gt;
+                &amp;lt;/Canvas.RenderTransform&amp;gt;
+                &amp;lt;Path xmlns:x=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot; Name=&amp;quot;path819&amp;quot; Fill=&amp;quot;#FFF80000&amp;quot; StrokeThickness=&amp;quot;1.06500006&amp;quot; Stroke=&amp;quot;#FF000000&amp;quot; StrokeMiterLimit=&amp;quot;4&amp;quot; StrokeLineJoin=&amp;quot;Miter&amp;quot; StrokeStartLineCap=&amp;quot;Flat&amp;quot; StrokeEndLineCap=&amp;quot;Flat&amp;quot;&amp;gt;
+                    &amp;lt;Path.Data&amp;gt;
+                        &amp;lt;PathGeometry Figures=&amp;quot;M 54.699142 33.286335 46.106258 48.693064 29.337637 49.085603 43.902103 63.631112 34.119389 82.463766 56.30276 74.712953 77.684273 81.661961 69.497116 64.392885 82.8495 49.00534 64.540804 48.35921 Z&amp;quot; FillRule=&amp;quot;NonZero&amp;quot;/&amp;gt;
+                    &amp;lt;/Path.Data&amp;gt;
+                &amp;lt;/Path&amp;gt;
+            &amp;lt;/Canvas&amp;gt;
+        &amp;lt;/Canvas&amp;gt;
+    &amp;lt;/Grid&amp;gt;
+&amp;lt;/UserControl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This can then be pasted in to a Window as a custom control:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-xml"&gt;&amp;lt;Window x:Class=&amp;quot;testpathxaml.MainWindow&amp;quot;
+        xmlns=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&amp;quot;
+        xmlns:x=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot;
+        xmlns:d=&amp;quot;http://schemas.microsoft.com/expression/blend/2008&amp;quot;
+        xmlns:mc=&amp;quot;http://schemas.openxmlformats.org/markup-compatibility/2006&amp;quot;
+        xmlns:local=&amp;quot;clr-namespace:testpathxaml&amp;quot;
+        mc:Ignorable=&amp;quot;d&amp;quot;
+        Title=&amp;quot;MainWindow&amp;quot; Height=&amp;quot;450&amp;quot; Width=&amp;quot;800&amp;quot;&amp;gt;
+    &amp;lt;Grid&amp;gt;
+        &amp;lt;local:StarIcon /&amp;gt;
+    &amp;lt;/Grid&amp;gt;
+&amp;lt;/Window&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="adding-properties-to-control-the-content"&gt;Adding properties to control the content&lt;/h2&gt;
+&lt;p&gt;The next step was to add some extra properties to the UserControl. These control the Fore and Back colours and the Scale.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-CSharp"&gt;public partial class StarIcon: UserControl
+{
+    public StarIcon()
+    {
+        InitializeComponent();
+    }
+
+    public double Scale
+    {
+        get { return (double)GetValue(ScaleProperty); }
+        set { SetValue(ScaleProperty, value); }
+    }
+
+    public static readonly DependencyProperty ScaleProperty =
+        DependencyProperty.Register(&amp;quot;Scale&amp;quot;, typeof(double), typeof(StarIcon), new PropertyMetadata(0.5));
+
+    public Color BackColor
+    {
+        get { return (Color)GetValue(BackColorProperty); }
+        set { SetValue(BackColorProperty, value); }
+    }
+
+    public static readonly DependencyProperty BackColorProperty =
+        DependencyProperty.Register(&amp;quot;BackColor&amp;quot;, typeof(Color), typeof(StarIcon));
+
+    public Color ForeColor
+    {
+        get { return (Color)GetValue(ForeColorProperty); }
+        set { SetValue(ForeColorProperty, value); }
+    }
+
+    public static readonly DependencyProperty ForeColorProperty =
+        DependencyProperty.Register(&amp;quot;ForeColor&amp;quot;, typeof(Color), typeof(StarIcon));
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This was a proof of concept, so no frills. But the defaults could be set for the &lt;code&gt;Color&lt;/code&gt;s to make the control look more appealing at design time.&lt;/p&gt;
+&lt;p&gt;Because the control needs to use these values, I added code to the Xaml to bind the values. Along the way, it became apparent that the &lt;code&gt;Path&lt;/code&gt; and &lt;code&gt;Ellipse&lt;/code&gt; both use a &lt;code&gt;Brush&lt;/code&gt; for their Fill property, so I added in a &lt;code&gt;IValueConverter&lt;/code&gt; (&lt;a href="https://stackoverflow.com/questions/3309709/how-do-i-convert-a-color-to-a-brush-in-xaml"&gt;Stack overflow&lt;/a&gt; sourced):&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-CSharp"&gt;public class ColorToSolidColorBrushValueConverter: IValueConverter
+{
+
+    public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+    {
+        if(null == value)
+        {
+            return null;
+        }
+
+        if(value is Color)
+        {
+            Color color = (Color)value;
+            return new SolidColorBrush(color);
+        }
+
+        Type type = value.GetType();
+        throw new InvalidOperationException(&amp;quot;Unsupported type [&amp;quot; + type.Name + &amp;quot;]&amp;quot;);
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And added the binding to the Xaml for the UserControl:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-xml"&gt;&amp;lt;UserControl x:Class=&amp;quot;testpathxaml.StarIcon&amp;quot;
+             xmlns=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&amp;quot;
+             xmlns:x=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot;
+             xmlns:mc=&amp;quot;http://schemas.openxmlformats.org/markup-compatibility/2006&amp;quot; 
+             xmlns:d=&amp;quot;http://schemas.microsoft.com/expression/blend/2008&amp;quot; 
+             xmlns:local=&amp;quot;clr-namespace:testpathxaml&amp;quot;
+             mc:Ignorable=&amp;quot;d&amp;quot;&amp;gt;
+    &amp;lt;UserControl.Resources&amp;gt;
+        &amp;lt;local:ColorToSolidColorBrushValueConverter  x:Key=&amp;quot;colorConverter&amp;quot;/&amp;gt;
+    &amp;lt;/UserControl.Resources&amp;gt;
+    &amp;lt;Grid&amp;gt;
+        &amp;lt;Canvas Name=&amp;quot;svg8&amp;quot; Width=&amp;quot;63&amp;quot; Height=&amp;quot;61&amp;quot;&amp;gt;
+            &amp;lt;Canvas.RenderTransform&amp;gt;
+                &amp;lt;TranslateTransform X=&amp;quot;0&amp;quot; Y=&amp;quot;0&amp;quot;/&amp;gt;
+            &amp;lt;/Canvas.RenderTransform&amp;gt;
+            &amp;lt;Canvas.LayoutTransform&amp;gt;
+                &amp;lt;ScaleTransform ScaleX=&amp;quot;{Binding RelativeSource={RelativeSource FindAncestor, 
+                                                 AncestorType={x:Type local:StarIcon}}, Path=Scale}&amp;quot; 
+                                ScaleY=&amp;quot;{Binding RelativeSource={RelativeSource FindAncestor, 
+                                                 AncestorType={x:Type local:StarIcon}}, Path=Scale}&amp;quot; /&amp;gt;
+            &amp;lt;/Canvas.LayoutTransform&amp;gt;
+            &amp;lt;Canvas.Resources/&amp;gt;
+            &amp;lt;Canvas Name=&amp;quot;layer1&amp;quot;&amp;gt;
+                &amp;lt;Canvas.RenderTransform&amp;gt;
+                    &amp;lt;TranslateTransform X=&amp;quot;-23.657977&amp;quot; Y=&amp;quot;-29.616311&amp;quot;/&amp;gt;
+                &amp;lt;/Canvas.RenderTransform&amp;gt;
+                &amp;lt;Ellipse xmlns:x=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot; Canvas.Left=&amp;quot;24.2&amp;quot; 
+                         Width=&amp;quot;62.7&amp;quot; Canvas.Top=&amp;quot;30.1&amp;quot; Height=&amp;quot;60.5&amp;quot; Name=&amp;quot;path815&amp;quot; 
+                         Fill=&amp;quot;{Binding RelativeSource={RelativeSource FindAncestor, 
+                                        AncestorType={x:Type local:StarIcon}}, 
+                                        Path=BackColor, Converter={StaticResource colorConverter}}&amp;quot; 
+                         StrokeThickness=&amp;quot;1.06500006&amp;quot; Stroke=&amp;quot;Black&amp;quot; 
+                         StrokeMiterLimit=&amp;quot;4&amp;quot; StrokeLineJoin=&amp;quot;Bevel&amp;quot; StrokeStartLineCap=&amp;quot;Round&amp;quot; StrokeEndLineCap=&amp;quot;Round&amp;quot;/&amp;gt;
+            &amp;lt;/Canvas&amp;gt;
+            &amp;lt;Canvas Name=&amp;quot;layer2&amp;quot;&amp;gt;
+                &amp;lt;Canvas.RenderTransform&amp;gt;
+                    &amp;lt;TranslateTransform X=&amp;quot;-23.657977&amp;quot; Y=&amp;quot;-29.616311&amp;quot;/&amp;gt;
+                &amp;lt;/Canvas.RenderTransform&amp;gt;
+                &amp;lt;Path xmlns:x=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot; Name=&amp;quot;path819&amp;quot; 
+                      Fill=&amp;quot;{Binding RelativeSource={RelativeSource FindAncestor, 
+                                     AncestorType={x:Type local:StarIcon}}, 
+                                     Path=ForeColor, Converter={StaticResource colorConverter}}&amp;quot; 
+                      StrokeThickness=&amp;quot;1.06500006&amp;quot; Stroke=&amp;quot;Black&amp;quot; StrokeMiterLimit=&amp;quot;4&amp;quot; StrokeLineJoin=&amp;quot;Miter&amp;quot; 
+                      StrokeStartLineCap=&amp;quot;Flat&amp;quot; StrokeEndLineCap=&amp;quot;Flat&amp;quot;&amp;gt;
+                    &amp;lt;Path.Data&amp;gt;
+                        &amp;lt;PathGeometry Figures=&amp;quot;M 54.699142 33.286335 46.106258 48.693064 29.337637 49.085603 43.902103 63.631112 34.119389 82.463766 56.30276 74.712953 77.684273 81.661961 69.497116 64.392885 82.8495 49.00534 64.540804 48.35921 Z&amp;quot; FillRule=&amp;quot;NonZero&amp;quot;/&amp;gt;
+                    &amp;lt;/Path.Data&amp;gt;
+                &amp;lt;/Path&amp;gt;
+            &amp;lt;/Canvas&amp;gt;
+        &amp;lt;/Canvas&amp;gt;
+    &amp;lt;/Grid&amp;gt;
+&amp;lt;/UserControl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And there you have it. A reusable, scalable control that allows the colours to be set independently.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/memsom/Mapsui-New"&gt;Mapsui.Forms&lt;/a&gt; - I have a custom version, which adds custom layers with customisable map objects, as well as a better abstraction of the map internal hierarchy.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/memsom/xamarin-bluetooth-le"&gt;xamarin-bluetooth-le&lt;/a&gt; - I have an Android only version that implements reliable writes.&lt;/li&gt;
-&lt;li&gt;PSP development - I am trying to learn more about this and see if I can make some small games as a fun side project from the day job.&lt;/li&gt;
-&lt;li&gt;Considering getting in to writing programming courses. Mainly around mobile development with Xamarin Forms.&lt;/li&gt;
+&lt;li&gt;The full source is &lt;a href="source/star_xaml_path.zip"&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The original SVG is '&lt;a href="(images/star.xaml)"&gt;star.svg&lt;/a&gt;'.&lt;/li&gt;
+&lt;li&gt;The Xaml export is '&lt;a href="(images/star.xaml)"&gt;star.xaml&lt;/a&gt;'.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;There's more, but we will let that unfold over time.&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This technique yielded very great results. Being bindable, we can reuse this control and drive the colours and scaling through any view model or bindable context.&lt;/p&gt;
 </content:encoded>
 		</item>
 		<item>
@@ -31,7 +241,7 @@
 			<link>http://memsom.github.io/posts/making-csharp-on-psp</link>
 			<description>&lt;p&gt;So, for a while I have wanted to get in to PSP programming. I've had a PSP since forever (2010?) and I always loved the form factor. I would dearly love a PSVita, but I can't really justify getting one without doing at least one PSP project.&lt;/p&gt;</description>
 			<guid>http://memsom.github.io/posts/making-csharp-on-psp</guid>
-			<pubDate>Thu, 28 Jan 2021 00:00:00 GMT</pubDate>
+			<pubDate>Wed, 03 Mar 2021 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;h1 id="making-the-psp-run.net-binaries"&gt;Making the PSP run .Net binaries&lt;/h1&gt;
 &lt;p&gt;So, for a while I have wanted to get in to PSP programming. I've had a PSP since forever (2010?) and I always loved the form factor. I would dearly love a PSVita, but I can't really justify getting one without doing at least one PSP project.&lt;/p&gt;
 &lt;p&gt;I decided to start looking at PSP development again. I've probably started 2 or 3 times over the last 10 or so years, but this time I finally went past a simple &amp;quot;hello, world!&amp;quot; or moving a simple block around the screen using the controls. Yes, I did those first too this time, but I also used that as an exercise to perfect my workflow. I now have a set-up on both PC (using a pre built SDK) and Mac (using an SDK I built myself from source) and have VSCode, USB HostFS, and PPSSPP running on both for quickly running code.&lt;/p&gt;
@@ -69,6 +279,25 @@ namespace testSimple
 &lt;p&gt;&lt;img src="images/psp.jpg" class="img-fluid" alt="Image of DNA on PSP running the app" title="DNA on PSP running the app" /&gt;&lt;/p&gt;
 &lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Well, it works. I am in the process of fleshing the code out more before releasing it. But I have now got a lot more working. Watch this space for more updates.&lt;/p&gt;
+</content:encoded>
+		</item>
+		<item>
+			<title>First Post</title>
+			<link>http://memsom.github.io/posts/first-post</link>
+			<description>&lt;p&gt;This is a little blog I've decided to put together to document my travels through coding. I'm going to use it mainly to record a diary of my work, aid-memoire for stuff I've learned that I'll probably forget, and general help for others using my code or areas I'm an "expert" in.&lt;/p&gt;</description>
+			<guid>http://memsom.github.io/posts/first-post</guid>
+			<pubDate>Thu, 28 Jan 2021 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="a-blog"&gt;A blog?&lt;/h1&gt;
+&lt;p&gt;This is a little blog I've decided to put together to document my travels through coding. I'm going to use it mainly to record a diary of my work, aid-memoire for stuff I've learned that I'll probably forget, and general help for others using my code or areas I'm an &amp;quot;expert&amp;quot; in.&lt;/p&gt;
+&lt;p&gt;I don't know how often it will be updated, but I have attempted to make it as simple as possible for myself by using &lt;a href="https://github.com/Wyamio/Wyam"&gt;Wyam&lt;/a&gt; to statically generate the content.&lt;/p&gt;
+&lt;p&gt;So, what I am currently working on...&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/memsom/Mapsui-New"&gt;Mapsui.Forms&lt;/a&gt; - I have a custom version, which adds custom layers with customisable map objects, as well as a better abstraction of the map internal hierarchy.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/memsom/xamarin-bluetooth-le"&gt;xamarin-bluetooth-le&lt;/a&gt; - I have an Android only version that implements reliable writes.&lt;/li&gt;
+&lt;li&gt;PSP development - I am trying to learn more about this and see if I can make some small games as a fun side project from the day job.&lt;/li&gt;
+&lt;li&gt;Considering getting in to writing programming courses. Mainly around mobile development with Xamarin Forms.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There's more, but we will let that unfold over time.&lt;/p&gt;
 </content:encoded>
 		</item>
 	</channel>
